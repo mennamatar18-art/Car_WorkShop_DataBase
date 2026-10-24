@@ -1,6 +1,6 @@
-create table Custmers (
-CustmerID int 
-constraint pk_custmers primary key not null,
+create table Customers (
+CustomerID int 
+constraint pk_customers primary key not null,
 FirstName nvarchar(50) not null,
 MiddleName nvarchar(50) default ('N/A'),
 LastName nvarchar(50) not null,
@@ -9,13 +9,13 @@ Email nvarchar(100)
 constraint unique_email unique not null
 )
 
-create table CustmerPhones (
-CustmerID int
-constraint fk_CustmerPhones_custmers foreign key(CustmerID)
-references Custmers(CustmerID) not null,
+create table CustomerPhones (
+CustomerID int
+constraint fk_CustomerPhones_Customers foreign key(CustomerID)
+references Customers(CustomerID) not null,
 PhoneNumber nvarchar(20) 
 constraint unique_phone unique not null,
-primary key(CustmerID,PhoneNumber)
+primary key(CustomerID,PhoneNumber)
 )
 
 create table Cars (
@@ -25,12 +25,12 @@ PlateNumber nvarchar(50)
 constraint unique_plate_number unique not null,
 BrandName nvarchar(50) not null,
 [Model] nvarchar (50) default ('N/A'),
-CustmerID int
-constraint fk_cars_custmers foreign key(CustmerID) 
-references Custmers(CustmerID) not null
+CustomerID int
+constraint fk_cars_Customers foreign key(CustomerID) 
+references Customers(CustomerID) not null
 )
 
 --drop table Cars
---drop table CustmerPhones
---drop table Custmers
+--drop table CustomerPhones
+--drop table Customers
 ----use Car_WorkShop
