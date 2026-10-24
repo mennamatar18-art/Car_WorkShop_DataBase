@@ -1,6 +1,6 @@
 create table Customers (
 CustomerID int 
-constraint pk_customers primary key not null,
+constraint pk_customers primary key,
 FirstName nvarchar(50) not null,
 MiddleName nvarchar(50) default ('N/A'),
 LastName nvarchar(50) not null,
@@ -20,7 +20,7 @@ primary key(CustomerID,PhoneNumber)
 
 create table Cars (
 CarID int 
-constraint pk_cars primary key not null,
+constraint pk_cars primary key,
 PlateNumber nvarchar(50) 
 constraint unique_plate_number unique not null,
 BrandName nvarchar(50) not null,
