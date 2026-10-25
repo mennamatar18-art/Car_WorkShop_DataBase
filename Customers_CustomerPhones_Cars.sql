@@ -29,8 +29,3 @@ CustomerID int
 constraint fk_cars_Customers foreign key(CustomerID) 
 references Customers(CustomerID) not null
 )
-
---drop table Cars
---drop table CustomerPhones
---drop table Customers
-----use Car_WorkShop
